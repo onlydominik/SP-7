@@ -1,9 +1,19 @@
+@import "reset.css";
 @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@600;800&display=swap");
 
 html {
   font-size: 100%;
+  cursor: url(./images/feather.png), auto;
 }
+
 // VARIABLES
+
+$font-family--main: "Figtree", sans-serif;
+
+$font-size--very-small: 0.7rem;
+$font-size--small: 0.8rem;
+$font-size--header: 1.2rem;
+$font-size--paragraph: 0.9rem;
 
 $font-weight--medium: 600;
 $font-weight--bold: 800;
@@ -19,8 +29,9 @@ $color-font--heading: hsl(0, 0%, 7%);
 
 body {
   background-color: $color-background--body;
-  height: 100vh;
   align-items: center !important;
+  min-height: 100vh;
+  font-family: $font-family--main;
 }
 
 .flex {
@@ -30,10 +41,69 @@ body {
   align-items: start;
 }
 
-.card {
-  background-color: $color-background--card;
-  width: clamp(350px, 50%, 95%);
-  max-width: 400px;
+.flex--row {
+  flex-direction: row;
+  align-items: center;
 }
 
-//MOBILE
+.card {
+  background-color: $color-background--card;
+  width: clamp(300px, 10%, 20%);
+  padding: 25px;
+  border-radius: 20px;
+  border: 0.5px solid black;
+  box-shadow: 8px 8px black;
+  gap: 15px;
+}
+
+.card__illustration {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.card__category {
+  background-color: $color--accent;
+  font-weight: $font-weight--bold;
+  padding: 5px 13px;
+  border-radius: 5px;
+  font-size: $font-size--very-small;
+  letter-spacing: 0.2px;
+  margin-top: 5px;
+  margin-bottom: -5px;
+}
+
+.card__date {
+  font-size: $font-size--small;
+}
+
+.card__header {
+  font-size: $font-size--header;
+  font-weight: $font-weight--bold;
+  color: $color-font--heading;
+}
+
+.card__header:hover {
+  color: $color--accent;
+
+  transition: all 100ms;
+}
+
+.card__description {
+  font-size: $font-size--paragraph;
+  color: $color-font--paragraph;
+}
+
+.person-data {
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.person-data__avatar {
+  width: auto;
+  max-height: 30px;
+}
+
+.person-data__name {
+  font-size: $font-size--small;
+  font-weight: $font-weight--bold;
+}
